@@ -1,0 +1,80 @@
+/*
+Author: Jakub Domowicz  
+Date: 2025-09-13
+*/
+
+body {
+    background-color: rgb(227, 202, 165);
+    margin: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(173, 139, 115);
+    margin: 20px;
+    padding: 10px;
+    border: 5px solid rgb(173, 139, 115);
+    border-radius: 10px;
+    background-color: rgb(255, 251, 233);
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(173, 139, 115);
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid rgb(173, 139, 115);
+    border-radius: 10px;
+    background-color: rgb(255, 251, 233);
+}
+
+p {
+    font-size: 20px;
+    text-align: center;
+    color: #6C4E31;
+    margin: 20px;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: circle;
+    font-size: 20px;
+    text-align: center;
+    color: #6C4E31;
+    margin: 5px;
+    padding: 10px;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    font-size: 20px;
+    text-align: center;
+    color: #6C4E31;
+    margin: 20px;
+    padding: 10px;
+}
+
+a {
+    font-size: 20px;
+    color: #6C4E31;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px 5px;
+    border: 1px solid rgb(173, 139, 115);
+    border-radius: 5px;
+    display: block; 
+    width: fit-content; 
+    text-align: center;
+}
+
+a:hover {
+    background-color: rgb(173, 139, 115);
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4B3621;
+}
