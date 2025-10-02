@@ -1,0 +1,17 @@
+/*
+Author: Jakub Domowicz  
+Date: 2025-09-10
+*/
+
+h1 {
+    color: lightblue;
+    font-size: 40px;
+}
+
+p {
+    color: darkgreen
+}
+
+body {
+    background-color: lightgrey;
+}
