@@ -38,7 +38,7 @@ audio {
 video {
     display: block;
     margin: 20px auto;
-    border: 2px solid #27ae60;
+    border: 2px solid #2980b9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
