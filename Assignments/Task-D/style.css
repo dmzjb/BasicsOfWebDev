@@ -1,0 +1,76 @@
+/*
+Author: Jakub Domowicz
+Date: 2025-10-08
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #FCF9EA;
+}
+
+h1, h2 {
+    color: #555;
+    font-style: italic;
+    text-align: center;
+}
+
+
+#special-message {
+    background-color: #BADFDB;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border-left: 3px solid #2980b9;
+    padding: 10px;
+}
+
+.box {
+    background-color: #FFBDBD;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 3px solid #FFA4A4;
+    padding: 10px;
+}
+
+.frame {
+    border: 2px solid #59AC77;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+    color: #555;
+}
+
+#linkowe {
+    font-size: 16px;
+    color: #444;
+    text-align: center;
+}
+
+a[target="_blank"] {
+    text-align: center;
+    color: green;
+    text-decoration: none;
+}
+
+a[target="_blank"]:hover {
+    text-decoration: underline;
+}
+
+img[alt="example image"] {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 2px solid #59AC77;
+}
