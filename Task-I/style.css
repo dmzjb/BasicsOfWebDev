@@ -1,0 +1,384 @@
+:root{
+    --primary: #2d6cdf;
+    --secondary: #eef3fa;
+    --dark: #111;
+    --text: #333;
+    --light: #fff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* BODY */
+
+body {
+    background: var(--secondary);
+    color: var(--text);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header{
+    background-color: var(--light);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1000; 
+}
+
+h1{
+    color: var(--primary);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* mobile button */
+.menu-toggle-input {
+    display: none; 
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    z-index: 1001;
+    padding: 0;
+}
+
+.main-nav a{
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color:var(--text);
+    font-weight: 500;
+}
+
+.main-nav a:hover{
+    color:var(--primary);
+}
+
+/* HERO */
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin:auto;
+    gap: 2rem;
+}
+
+.hero-text h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p{
+    font-size: 1.2rem;
+    max-width: 520px;
+}
+
+.hero img{
+    width: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* BUTTON */
+
+.btn{
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    margin-top: 0.7rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color .2s;
+}
+
+.btn:hover{
+    background-color: #3c7dfc;
+}
+
+/* ABOUT US */
+
+.about{
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: auto;
+    max-width: 800px;
+}
+
+.about h2{
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+}
+
+/* GAMES GRID */
+
+.games {
+    max-width: 1200px;
+    padding: 4rem 2rem;
+    margin: auto;
+}
+
+.games h2{
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card{
+    background-color: var(--light);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow .2s;
+    padding-bottom: 1rem;
+}
+
+.card:hover{
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card img{
+    width: 100%;
+    height: 440px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding: 1rem;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card p{
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+/* WHY US */
+
+.features{
+    max-width: 1200px;
+    padding: 4rem 2rem;
+    margin: auto;
+}
+
+.features h2{
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.features-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.features-card{
+    background-color: var(--light);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.features-card h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+/* CTA */
+
+.cta{
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.cta h2{
+    font-size: 2.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.cta .btn{
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+.cta .btn:hover{
+    background-color: var(--secondary);
+}
+
+/* FOOTER */
+
+footer{
+    background-color: var(--light);
+    color: var(--text);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgb(220, 220, 220);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+footer p{
+    font-size: 1rem;
+}
+
+.right{
+    margin-top:0.8rem;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    /* BUTTON ON SMALL SCREENS */
+    .menu-toggle {
+        display: block; 
+    }
+
+    .main-nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 0.5rem;
+    }
+
+    /* SHOW MENU WHEN CHECKBOX CHECKED */
+    .menu-toggle-input:checked ~ .main-nav {
+        display: flex;
+    }
+
+    .main-nav a { 
+        display: block;
+        margin: 0;
+        padding: 0.8rem 2rem;
+        text-align: left;
+        border-top: 1px solid var(--secondary);
+    }
+    
+    .hero, .games, .features {
+        padding: 2rem 1.5rem; 
+    }
+}
+
+@media (max-width: 840px) {
+    .hero {
+        flex-direction: column; 
+        text-align: center;
+        padding-top: 2rem; 
+    }
+    
+    .hero-text {
+        order: 2;
+    }
+    
+    .hero img {
+        width: 100%;
+        margin-bottom: 2rem;
+        order: 1;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        max-width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features-grid{
+         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .features-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card img {
+        height: 300px;
+    }
+    
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+}
