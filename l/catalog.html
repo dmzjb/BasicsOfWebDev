@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayBox - Game Rental Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PlayBox</h1>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="menu-toggle">
+            ☰
+        </label>
+        
+        <nav class="main-nav">
+            <a href="index.html">Home</a> 
+            <a href="order.html">Order Now</a>
+            <a href="#video-tour">Video</a>
+            <a href="index.html#about">About us</a>
+        </nav>
+    </header>
+    
+    <section class="intro-catalog" id="catalog">
+        <h2>Rent Now: Classic & Modern PlayStation Games</h2>
+        <p>Browse our carefully selected collection of games for PS2, PS3, and PS4. Enjoy low prices and flexible rental periods. Find your next favorite title today!</p>
+    </section>
+
+    <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All Platforms</button>
+        <button class="filter-btn" data-filter="ps4">PS4 Games</button>
+        <button class="filter-btn" data-filter="ps3">PS3 Games</button>
+        <button class="filter-btn" data-filter="ps2">PS2 Games</button>
+    </div>
+    <section class="catalog-grid-section">
+        <div class="catalog-grid">
+            
+            <div class="card catalog-card" data-category="ps4">
+                <img src="assets/gow.jpg" alt="God of War PS4 game cover" loading="lazy">
+                <img src="assets/example.jpg" alt="example hidden" hidden>
+                <div class="card-content">
+                    <h3>God of War PS4</h3>
+                    <p>Step into the shoes of Kratos in a Norse setting. Gripping story, great combat, and relationship with his son Atreus.</p>
+                    <p class="price">**49 zł/d**</p>
+                    <a href="order.html?item=gow4" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+            <div class="card catalog-card" data-category="ps3">
+                <img src="assets/unch3.jpg" alt="Uncharted 3 PS3 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>Uncharted 3 PS3</h3>
+                    <p>The next installment in Nathan Drake's adventures, full of action, puzzles, and exotic locations.</p>
+                    <p class="price">**39 zł/d**</p>
+                    <a href="order.html?item=unch3" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+            <div class="card catalog-card" data-category="ps2">
+                <img src="assets/tony.png" alt="Tony Hawk's Pro Skater 4 PS2 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>TonyHawk4 PS2</h3>
+                    <p>Open world, new tricks, and an unforgettable soundtrack. Return to the golden age of skateboarding!</p>
+                    <p class="price">**29 zł/d**</p>
+                    <a href="order.html?item=tony4" class="btn btn-small">Rent now</a>
+                </div>
+            </div>  
+            
+            <div class="card catalog-card" data-category="ps4">
+                <img src="assets/tlou1.jpg" alt="The Last of Us Part I PS4 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>The Last of Us P1 PS4</h3>
+                    <p>Joel and Ellie's emotional journey in a post-apocalyptic world. A story you won't forget. PS4 edition.</p>
+                    <p class="price">**59 zł/d**</p>
+                    <a href="order.html?item=tlou1" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+            <div class="card catalog-card" data-category="ps4">
+                <img src="assets/gtaps4.webp" alt="Grand Theft Auto V PS4 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>GTA V PS4</h3>
+                    <p>Three main characters, a huge open world of Los Santos. Unlimited possibilities for fun.</p>
+                    <p class="price">**45 zł/d**</p>
+                    <a href="order.html?item=gtav4" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+            <div class="card catalog-card" data-category="ps3">
+                <img src="assets/gtaps3.jpg" alt="GTA V PS3 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>GTA V PS3</h3>
+                    <p>Los Santos on the older console. Great optimization and plenty of fun.</p>
+                    <p class="price">**35 zł/d**</p>
+                    <a href="order.html?item=gtav3" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+            <div class="card catalog-card" data-category="ps2">
+                <img src="assets/nfsmw.webp" alt="Need for Speed Most Wanted PS2 game cover" loading="lazy">
+                <div class="card-content">
+                    <h3>NFS Most Wanted PS2</h3>
+                    <p>Racing classic. Escape the police and become number 1 on the Blacklist.</p>
+                    <p class="price">**29 zł/d**</p>
+                    <a href="order.html?item=nfsmw" class="btn btn-small">Rent now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="video-tour" id="video-tour">
+        <h2>Don't do this with games! 🎮</h2>
+        <div class="video-container">
+            <video controls poster="assets/video-poster.jpg" preload="metadata" class="main-video">
+                <source src="assets/ps5howtoputcd.mp4" type="video/mp4"> 
+                <source src="assets/ps5howtoputcd.webm" type="video/webm">
+                <track kind="captions" src="captions-en.vtt" srclang="en" label="English">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p>Check how to properly put CD into PS.</p>
+    </section>
+
+    <footer>
+        <p><strong>Contact us:</strong> support@playbox.com</p>
+        <p><strong>Phone:</strong> +358 231 321 23 23</p>
+        <p><strong>Address:</strong> 123 Manka Monuszki, Kokkola</p>
+        <p><strong>Instagram:</strong> @PlayRent &middot; <strong>Twitter/X:</strong> @PlayRent &middot; <strong>Facebook:</strong> PlayRent Official</p>
+        <p><strong>Opening Hours:</strong> Mon-Fri: 09:00-18:00 &middot; Sat: 10:00-16:00</p>
+        <p class="right">© 2025 PlayRent — All Rights Reserved</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

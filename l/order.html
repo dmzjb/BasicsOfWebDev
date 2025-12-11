@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Rental Order | PlayBox</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ustawienie minimalnej daty na dziś
+            const startDateInput = document.getElementById('start-date');
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const dateString = `${year}-${month}-${day}`;
+            startDateInput.setAttribute('min', dateString);
+
+            // Automatyczny wybór przedmiotu z parametru URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedItemValue = urlParams.get('item'); // Odczytuje np. 'gow4' z ?item=gow4
+
+            if (selectedItemValue) {
+                const selectElement = document.getElementById('item');
+                
+                // Sprawdzenie, czy opcja istnieje i jej ustawienie
+                const optionExists = Array.from(selectElement.options).some(option => option.value === selectedItemValue);
+
+                if (optionExists) {
+                    selectElement.value = selectedItemValue;
+                    // Opcjonalnie: Przewinięcie do formularza dla lepszego UX
+                    document.querySelector('.order-page-container').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>PlayBox</h1>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="menu-toggle">
+            ☰
+        </label>
+        
+        <nav class="main-nav">
+            <a href="index.html">Home</a> 
+            <a href="catalog.html">Catalog</a> 
+            <a href="order.html">Order Now</a>
+            <a href="index.html#about">About us</a>
+        </nav>
+    </header>
+    
+    <main class="order-page-container">
+        <section class="order-intro">
+            <h2>Place Your Rental Request</h2>
+            <p>Ready to play? Fill out the form below to request your rental. We will contact you within 24 hours to confirm availability and finalize the details of your order.</p>
+        </section>
+
+        <!-- The form action is set to a dummy thank you page -->
+        <form class="rental-form" action="thanks.html" method="POST">
+            
+            <!-- 1. CUSTOMER INFORMATION -->
+            <fieldset>
+                <legend>1. Customer Information</legend>
+                
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" name="fullName" placeholder="Jan Kowalski" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <!-- Uses a simple pattern for 9 digits (common in Poland/EU) -->
+                    <input type="tel" id="phone" name="phone" placeholder="123 456 789" pattern="[0-9]{3}[ \-]*[0-9]{3}[ \-]*[0-9]{3}">
+                    <small>Optional, format: 123 456 789</small>
+                </div>
+            </fieldset>
+
+            <!-- 2. RENTAL DETAILS -->
+            <fieldset>
+                <legend>2. Rental Details</legend>
+
+                <div class="form-group">
+                    <label for="item">Item to Rent *</label>
+                    <select id="item" name="rentalItem" required>
+                        <option value="">-- Select a game or equipment --</option>
+                        <!-- UWAGA: Wartości "value" muszą odpowiadać parametrom przekazywanym z catalog.html -->
+                        <option value="gow4">God of War PS4 (49 zł/d)</option>
+                        <option value="tlou1">The Last of Us P1 PS4 (59 zł/d)</option>
+                        <option value="gtav4">GTA V PS4 (45 zł/d)</option>
+                        <option value="unch3">Uncharted 3 PS3 (39 zł/d)</option>
+                        <option value="gtav3">GTA V PS3 (35 zł/d)</option>
+                        <option value="tony4">Tony Hawk's Pro Skater 4 PS2 (29 zł/d)</option>
+                        <option value="nfsmw">NFS Most Wanted PS2 (29 zł/d)</option>
+                    </select>
+                </div>
+                
+                <div class="date-quantity-group">
+                    <div class="form-group">
+                        <label for="start-date">Start Date *</label>
+                        <!-- JS sets min date to today -->
+                        <input type="date" id="start-date" name="startDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="days">Number of Days *</label>
+                        <input type="number" id="days" name="rentalDays" min="1" max="60" value="3" required>
+                        <small>Min: 1 day, Max: 60 days</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity *</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                    <small>Default: 1</small>
+                </div>
+            </fieldset>
+            
+            <!-- 3. ADDITIONAL INFO & CONSENT -->
+            <fieldset>
+                <legend>3. Additional Information</legend>
+                
+                <div class="form-group">
+                    <label for="message">Special Requests / Message</label>
+                    <textarea id="message" name="message" placeholder="E.g., Preferred pickup time, specific version requests..."></textarea>
+                </div>
+                
+                <div class="consent-group">
+                    <input type="checkbox" id="terms" name="acceptTerms" required>
+                    <label for="terms">I accept the rental terms and privacy policy. *</label>
+                </div>
+                
+                <div class="consent-group">
+                    <input type="checkbox" id="newsletter" name="subscribeNewsletter">
+                    <label for="newsletter">Subscribe to PlayBox newsletter for deals and news.</label>
+                </div>
+            </fieldset>
+
+            <div class="submit-btn-container">
+                <a href="thanks.html" class="btn">Send Rental Request</a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p><strong>Contact us:</strong> support@playbox.com</p>
+        <p><strong>Phone:</strong> +358 231 321 23 23</p>
+        <p><strong>Address:</strong> 123 Manka Monuszki, Kokkola</p>
+        <p><strong>Instagram:</strong> @PlayRent &middot; <strong>Twitter/X:</strong> @PlayRent &middot; <strong>Facebook:</strong> PlayRent Official</p>
+        <p><strong>Opening Hours:</strong> Mon-Fri: 09:00-18:00 &middot; Sat: 10:00-16:00</p>
+        <p class="right">© 2025 PlayRent — All Rights Reserved</p>
+    </footer>
+</body>
+</html>
